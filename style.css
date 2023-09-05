@@ -1,0 +1,49 @@
+html{
+    overflow-y: scroll;
+    text-align: center;
+    background-image: url(Frey.png);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 40px;
+}
+
+.menu{
+    text-align: left;
+}
+
+.menubutton{
+    padding: 16px;
+    margin-left: 30px;
+    font-size: 16px;
+    background-color: darkgrey;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.menucontent{
+    display: none;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    margin-top: 300px;
+    padding-bottom: 100%;
+    padding-top: 30px;
+
+}
+
+.info{
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    /* html{
+
+    } */
+  }
