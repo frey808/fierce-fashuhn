@@ -3,18 +3,15 @@ html{
     text-align: center;
     background-image: url(ghoul.jpg);
     background-repeat: no-repeat;
-    background-position-x: 50%;
+    background-position: 50%;
     background-attachment: fixed;
-    background-size: 50%;
-}
-
-h1{
-    font-size: 40px;
+    background-size: contain;
+    color: black;
 }
 
 #openmenu{
     position:absolute;
-    top: 30%;
+    top: 20%;
     left: 15%;
     font-size: 20px;
     background-color: darkgrey;
@@ -23,38 +20,47 @@ h1{
     border-width: 1px;
 }
 
+#menu{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 150%;
+    background-color: lightslategray;
+    z-index: 1;
+}
+
 #closemenu{
     position:absolute;
-    top: 5%;
-    right: 10%;
+    top: 10px;
+    right: 10px;
+    width: 40px;
     font-size: 20px;
     background-color: darkgrey;
-    padding: 10px;
+    padding: 5px;
     border-style: solid;
     border-width: 1px;
 }
 
 #menucontent{
     position: absolute;
-    display: none;
-    top: 0;
+    top: 25%;
     left: 0;
-    width: 35%;
-    height: 100%;
-    padding-top: 10%;
-    background-color: lightslategray;
-    z-index: 1;
+    right: 0;
+    margin: auto;
+    margin-top: 10%;
 }
 
 footer{
     background-color: black;
     position: absolute;
     left: 0;
+    bottom: -50%;
     width: 100%;
     color: white;
-    margin-top: 400px;
-    padding-bottom: 5%;
-    padding-top: 30px;
+    padding-bottom: 15%;
+    padding-top: 5%;
 
 }
 
