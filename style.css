@@ -12,10 +12,21 @@ h1{
     font-size: 40px;
 }
 
-#menubutton{
+#openmenu{
     position:absolute;
     top: 30%;
     left: 15%;
+    font-size: 20px;
+    background-color: darkgrey;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#closemenu{
+    position:absolute;
+    top: 5%;
+    right: 10%;
     font-size: 20px;
     background-color: darkgrey;
     padding: 10px;
@@ -30,11 +41,16 @@ h1{
     left: 0;
     width: 35%;
     height: 100%;
+    padding-top: 10%;
     background-color: lightslategray;
+    z-index: 1;
 }
 
 footer{
     background-color: black;
+    position: absolute;
+    left: 0;
+    width: 100%;
     color: white;
     margin-top: 400px;
     padding-bottom: 5%;
