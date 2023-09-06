@@ -1,9 +1,9 @@
-function openMenu(){
-    document.getElementById("menu").style.display = "inline";
-    document.getElementById("openmenu").style.display = "none";
+function openNav(){
+    document.getElementById("nav").style.display = "inline";
+    document.getElementById("opennav").style.display = "none";
 }
 
-function closeMenu(){
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("openmenu").style.display = "inline";
+function closeNav(){
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("opennav").style.display = "inline";
 }
