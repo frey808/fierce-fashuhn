@@ -1,14 +1,3 @@
-// static database manipulation and testing
-require('dotenv').config()
-const mysql = require('mysql2')
-const connection = mysql.createConnection(process.env.DATABASE_URL)
-connection.query('SHOW TABLES', function(err, results){console.log(results)})
-connection.query('SELECT * FROM items', function(err, results){console.log(results)})
-// connection.query('CREATE TABLE items(id SERIAL PRIMARY KEY, name VARCHAR(31))', function(err, results){console.log(results)})
-// connection.query('DROP TABLE IF EXISTS items', function(err, results){console.log(results)})
-// connection.query('INSERT INTO items (id, name) VALUES (1, "test item")', function(err, results){console.log(results)})
-connection.end()
-
 function openNav(){
     document.getElementById("nav").style.display = "inline";
     document.getElementById("opennav").style.display = "none";
@@ -19,16 +8,30 @@ function closeNav(){
     document.getElementById("opennav").style.display = "inline";
 }
 
+function updateData(apiResponse){
+    document.getElementById("test").innerHTML = apiResponse;
+}
+
 function swap(){
     //swap view
 }
 
-function getData(){
-    const connection = mysql.createConnection(process.env.DATABASE_URL)
-    connection.query('SELECT * FROM items', function (err, results) {
-        document.getElementById("test").innerHTML = results;
+function fetchData(){
+    fetch('https://mqbmmuwreh.us-east-2.awsapprunner.com/').then((response) => { //for deployment - comment out to query test server
+    // fetch('http://localhost:8080/').then((response) => { //for local testing - comment out to query deployment server
+        if (response.status === 200){
+            return (response.json()) ;
+        }else{
+            console.log("HTTP error:" + response.status + ":" +  response.statusText);
+            return ([["status ", response.status]]);
+        }
+    }).then ((jsonOutput) => {
+        updateData(jsonOutput);
+    }).catch((error) => {
+        console.log(error);
+        updateData("error caught");
     })
-    connection.end()
+
 }
 
 function createItem(){
