@@ -1,47 +1,28 @@
+function hide(id){
+    document.getElementById(id).style.display = "none";
+}
+
+function show(id){
+    document.getElementById(id).style.display = "inline";
+}
+
 function openNav(){
-    document.getElementById("nav").style.display = "inline";
-    document.getElementById("opennav").style.display = "none";
+    show("nav");
+    hide("opennav");
 }
 
 function closeNav(){
-    document.getElementById("nav").style.display = "none";
-    document.getElementById("opennav").style.display = "inline";
+    show("opennav");
+    hide("nav");
 }
 
-function updateData(apiResponse){
-    document.getElementById("test").innerHTML = apiResponse;
-}
-
-function swap(){
-    //swap view
-}
-
-function fetchData(){
-    fetch('https://mqbmmuwreh.us-east-2.awsapprunner.com/').then((response) => { //for deployment - comment out to query test server
-    // fetch('http://localhost:8080/').then((response) => { //for local testing - comment out to query deployment server
-        if (response.status === 200){
-            return (response.json()) ;
-        }else{
-            console.log("HTTP error:" + response.status + ":" +  response.statusText);
-            return ([["status ", response.status]]);
-        }
-    }).then ((jsonOutput) => {
-        updateData(jsonOutput);
-    }).catch((error) => {
-        console.log(error);
-        updateData("error caught");
-    })
-
-}
-
-function createItem(){
-    //add
-}
-
-function editItem(){
-    //edit
-}
-
-function deleteItem(){
-    //delete
+function swap(content){
+    closeNav();
+    document.getElementById("background").style["background-image"] = "none";
+    document.getElementById("opennav").style.top = "5%";
+    document.getElementById("footer").style.top = "auto";
+    Array.from(document.getElementsByClassName("content")).forEach((elem) =>
+        hide(elem.id)
+    );
+    show(content);
 }

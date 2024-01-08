@@ -22,7 +22,7 @@ nav{
     display: none;
     top: 0;
     left: 0;
-    width: 35%;
+    width: 40%;
     height: 150%;
     background-color: lightslategray;
     z-index: 1;
@@ -58,7 +58,17 @@ nav{
     color: darkgrey;
 }
 
-footer{
+.content{
+    display: none;
+}
+
+.item{
+    width: 70%;
+    height: auto;
+    margin: 20px;
+}
+
+#footer{
     background-color: black;
     position: absolute;
     left: 0;
@@ -75,7 +85,7 @@ footer{
 
 @media only screen and (min-width: 768px) {
     /* For desktop: */
-    /* html{
-
-    } */
+    nav{
+        width: 25%;
+    }
   }
