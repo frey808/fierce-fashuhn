@@ -79,7 +79,9 @@ nav{
 }
 
 .item{
-    width: 70%;
+    min-width: 275px;
+    max-width: 275px;
+    max-height: 700px;
     height: auto;
     margin-top: 10px;
 }
@@ -108,5 +110,8 @@ nav{
     /* For desktop: */
     nav{
         width: 25%;
+    }
+    .item{
+        max-width: 700px
     }
   }

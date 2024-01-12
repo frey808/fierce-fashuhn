@@ -33,5 +33,4 @@ function home(){
     Array.from(document.getElementsByClassName("content")).forEach((elem) =>
         hide(elem.id)
     );
-    show(content);
 }
