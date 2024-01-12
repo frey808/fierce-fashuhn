@@ -18,9 +18,18 @@ function closeNav(){
 
 function swap(content){
     closeNav();
-    document.getElementById("background").style["background-image"] = "none";
-    document.getElementById("opennav").style.top = "5%";
+    document.getElementById("background").style["background-size"] = "0px";
     document.getElementById("footer").style.top = "auto";
+    Array.from(document.getElementsByClassName("content")).forEach((elem) =>
+        hide(elem.id)
+    );
+    show(content);
+}
+
+function home(){
+    closeNav();
+    document.getElementById("background").style["background-size"] = "contain";
+    document.getElementById("footer").style.top = "100%";
     Array.from(document.getElementsByClassName("content")).forEach((elem) =>
         hide(elem.id)
     );
